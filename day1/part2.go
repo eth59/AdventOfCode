@@ -22,34 +22,22 @@ func partTwo(input string) int {
 			panic(err)
 		}
 
-		res += nb / 100
-		nb -= (nb / 100) * 100
-
-		if line[0] == 'L' {
-			if current_position == 0 {
-				current_position -= nb
-			} else {
-				current_position -= nb
-				if current_position < 0 {
-					res ++
+		for i := 0; i < nb; i++ {
+			if line[0] == 'L' {
+				current_position -= 1
+				if current_position == 0 {
+					res++
+				} else if current_position < 0 {
+					current_position += 100
 				}
-				current_position %= 100
-			}
-			
-		} else {
-			if current_position == 0 {
-				current_position += nb
 			} else {
-				current_position += nb
-				if current_position > 99 {
-					res ++
+				current_position += 1
+				if current_position == 100 {
+					res++
+					current_position = 0
 				}
-				current_position %= 100
 			}
-		}
-		if current_position < 0 {
-			current_position += 100
-		}
+ 		}
 	}
 
 	return res
