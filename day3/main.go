@@ -25,6 +25,6 @@ func main() {
 	resultTest2 := partTwo(inputTest)
 	fmt.Println("Result test:", resultTest2)
 
-	// result = partTwo(input)
-	// fmt.Println("Result:", result)
+	result = partTwo(input)
+	fmt.Println("Result:", result)
 }
