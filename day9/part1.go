@@ -6,10 +6,6 @@ import (
 	"strings"
 )
 
-type coords struct {
-	x, y int
-}
-
 func partOne(input string) int {
 	lines := strings.Split(input, "\n")
 	nbRedTiles := len(lines)
@@ -18,14 +14,8 @@ func partOne(input string) int {
 	redTiles := make([]coords, 0, nbRedTiles)
 	for _, line := range lines {
 		c := strings.Split(line, ",")
-		x, err := strconv.Atoi(c[0])
-		if err != nil {
-			panic(err)
-		}
-		y, err := strconv.Atoi(c[1])
-		if err != nil {
-			panic(err)
-		}
+		x, _ := strconv.ParseFloat(c[0], 64)
+		y, _ := strconv.ParseFloat(c[1], 64)
 		redTiles = append(redTiles, coords{x, y})
 	}
 
