@@ -99,7 +99,7 @@ func solveMachine(m Machine) (res int) {
 			}
 		}
 
-		// clacul variables pivots
+		// calcul variables pivots
 		for row := 0; row < pivotRow; row++ {
 			pCol := pivotCols[row]
 			val := matrix[row][nbButtons] // valeur cible
@@ -107,6 +107,8 @@ func solveMachine(m Machine) (res int) {
 			// xor des variables libres activées sur cette ligne
 			for _, fCol := range freeVars {
 				// si c une variable libre activée avec un 1 dans cette ligne
+				// matrix[row][fCol] == 1, le bouton a une influence sur l'état des lumières
+				// solution[fCol] == 1, le bouton est cliqué
 				if matrix[row][fCol] == 1 && solution[fCol] == 1 {
 					val ^= 1
 				}
