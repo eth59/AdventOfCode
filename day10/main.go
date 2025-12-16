@@ -15,13 +15,13 @@ func main() {
 	fmt.Println("PART 1:")
 
 	machineInputTest := parseInput(inputTest)
-	// machineInput := parseInput(input)
+	machineInput := parseInput(input)
 
 	resultTest := partOne(machineInputTest)
 	fmt.Println("Result test:", resultTest)
 
-	// result := partOne(machineInput)
-	// fmt.Println("Result:", result)
+	result := partOne(machineInput)
+	fmt.Println("Result:", result)
 
 	// fmt.Println("PART 2:")
 
