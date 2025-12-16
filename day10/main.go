@@ -23,11 +23,11 @@ func main() {
 	result := partOne(machineInput)
 	fmt.Println("Result:", result)
 
-	// fmt.Println("PART 2:")
+	fmt.Println("PART 2:")
 
-	// resultTest2 := partTwo(inputTest)
-	// fmt.Println("Result test:", resultTest2)
+	resultTest2 := partTwo(machineInputTest)
+	fmt.Println("Result test:", resultTest2)
 
-	// result = partTwo(input)
-	// fmt.Println("Result:", result)
+	result = partTwo(machineInput)
+	fmt.Println("Result:", result)
 }
