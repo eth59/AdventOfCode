@@ -1,0 +1,3 @@
+module aoc.com/{{.Year}}/day{{.Day}}
+
+go 1.25.5

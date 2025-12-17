@@ -1,0 +1,2 @@
+# {{.Year}} - Day {{.Day}}
+https://adventofcode.com/{{.Year}}/day/{{.Day}}

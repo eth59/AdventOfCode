@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -13,31 +14,59 @@ var inputTest string
 var input string
 
 func main() {
-	inputTestGrid := parseGrid(inputTest)
-	inputGrid := parseGrid(input)
+	args := os.Args[1:]
+	
+	// valeurs par défaut
+	runPart1 := true
+	runPart2 := true
+	isTest := false
 
-	fmt.Println("PART 1:")
+	// gestion des arguments
+	for _, arg := range args {
+		lowArg := strings.ToLower(arg)
+		switch {
+		case lowArg == "test" || lowArg == "t":
+			isTest = true
+		case lowArg == "1":
+			runPart1 = true
+			runPart2 = false
+		case lowArg == "2":
+			runPart2 = true
+			runPart1 = false
+		}
+	}
 
-	resultTest := partOne(inputTestGrid)
-	fmt.Println("Result test:", resultTest)
+	// selection de l'input
+	if isTest {
+		fmt.Println("🧪🧪🧪  MODE TEST 🧪🧪🧪")
+	}
 
-	result := partOne(inputGrid)
-	fmt.Println("Result:", result)
-
-	fmt.Println("PART 2:")
-
-	resultTest2 := partTwo(inputTestGrid)
-	fmt.Println("Result test:", resultTest2)
-
-	result = partTwo(inputGrid)
-	fmt.Println("Result:", result)
+	// exécution des parties
+	if runPart1 {
+		if isTest {
+			execute(1, inputTest)
+		} else {
+			execute(1, input)
+		}
+	}
+	if runPart2 {
+		if isTest {
+			execute(2, inputTest)
+		} else {
+			execute(2, input)
+		}
+	}
 }
 
-func parseGrid(input string) [][]rune {
-	lines := strings.Split(strings.TrimSpace(input), "\n")
-	grid := make([][]rune, len(lines))
-	for r, line := range lines {
-		grid[r] = []rune(line)
+// exécution avec affichage des résultats
+func execute(part int, input string) {
+	fmt.Printf("--- YEAR 2025 - DAY 4 - PART %d ---\n", part)
+	var result interface{}
+	if part == 1 {
+		result = partOne(parseGrid(input))
+	} else {
+		result = partTwo(parseGrid(input))
 	}
-	return grid
+	fmt.Printf("Result: %v\n", result)
+	fmt.Println()
 }

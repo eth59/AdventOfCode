@@ -3,6 +3,8 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"os"
+	"strings"
 )
 
 //go:embed input_test.txt
@@ -15,23 +17,59 @@ var inputTest2 string
 var input string
 
 func main() {
-	fmt.Println("PART 1:")
+	args := os.Args[1:]
+	
+	// valeurs par défaut
+	runPart1 := true
+	runPart2 := true
+	isTest := false
 
-	devicesTest := parseInput(inputTest)
-	devicesTest2 := parseInput(inputTest2)
-	devices := parseInput(input)
+	// gestion des arguments
+	for _, arg := range args {
+		lowArg := strings.ToLower(arg)
+		switch {
+		case lowArg == "test" || lowArg == "t":
+			isTest = true
+		case lowArg == "1":
+			runPart1 = true
+			runPart2 = false
+		case lowArg == "2":
+			runPart2 = true
+			runPart1 = false
+		}
+	}
 
-	resultTest := partOne(devicesTest)
-	fmt.Println("Result test:", resultTest)
+	// selection de l'input
+	if isTest {
+		fmt.Println("🧪🧪🧪  MODE TEST 🧪🧪🧪")
+	}
 
-	result := partOne(devices)
-	fmt.Println("Result:", result)
+	// exécution des parties
+	if runPart1 {
+		if isTest {
+			execute(1, inputTest)
+		} else {
+			execute(1, input)
+		}
+	}
+	if runPart2 {
+		if isTest {
+			execute(2, inputTest2)
+		} else {
+			execute(2, input)
+		}
+	}
+}
 
-	fmt.Println("PART 2:")
-
-	resultTest2 := partTwo(devicesTest2)
-	fmt.Println("Result test:", resultTest2)
-
-	result = partTwo(devices)
-	fmt.Println("Result:", result)
+// exécution avec affichage des résultats
+func execute(part int, input string) {
+	fmt.Printf("--- YEAR 2025 - DAY 11 - PART %d ---\n", part)
+	var result interface{}
+	if part == 1 {
+		result = partOne(parseInput(input))
+	} else {
+		result = partTwo(parseInput(input))
+	}
+	fmt.Printf("Result: %v\n", result)
+	fmt.Println()
 }

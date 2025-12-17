@@ -1,3 +1,3 @@
-module aoc2025.com/day5
+module aoc.com/2025/day5
 
 go 1.25.5

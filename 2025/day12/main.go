@@ -3,6 +3,8 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"os"
+	"strings"
 )
 
 //go:embed input_test.txt
@@ -12,14 +14,59 @@ var inputTest string
 var input string
 
 func main() {
-	fmt.Println("PART 1:")
+	args := os.Args[1:]
+	
+	// valeurs par défaut
+	runPart1 := true
+	runPart2 := true
+	isTest := false
 
-	giftsTest, regionsTest := parseInput(inputTest)
-	gifts, regions := parseInput(input)
+	// gestion des arguments
+	for _, arg := range args {
+		lowArg := strings.ToLower(arg)
+		switch {
+		case lowArg == "test" || lowArg == "t":
+			isTest = true
+		case lowArg == "1":
+			runPart1 = true
+			runPart2 = false
+		case lowArg == "2":
+			runPart2 = true
+			runPart1 = false
+		}
+	}
 
-	resultTest := partOne(giftsTest, regionsTest)
-	fmt.Println("Result test:", resultTest)
+	// selection de l'input
+	if isTest {
+		fmt.Println("🧪🧪🧪  MODE TEST 🧪🧪🧪")
+	}
 
-	result := partOne(gifts, regions)
-	fmt.Println("Result:", result)
+	// exécution des parties
+	if runPart1 {
+		if isTest {
+			execute(1, inputTest)
+		} else {
+			execute(1, input)
+		}
+	}
+	if runPart2 {
+		if isTest {
+			execute(2, inputTest)
+		} else {
+			execute(2, input)
+		}
+	}
+}
+
+// exécution avec affichage des résultats
+func execute(part int, input string) {
+	fmt.Printf("--- YEAR 2025 - DAY 12 - PART %d ---\n", part)
+	var result interface{}
+	if part == 1 {
+		result = partOne(parseInput(input))
+	} else {
+		result = "Il n'y a pas de deuxième partie ! 🙃"
+	}
+	fmt.Printf("Result: %v\n", result)
+	fmt.Println()
 }
