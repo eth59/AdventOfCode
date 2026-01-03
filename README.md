@@ -40,7 +40,7 @@ Benchmark results made on an AMD Ryzen 7 7700X processor (input parsing may not 
 | [Day 11](2024/day11) | `262.61 μs` | `10.05 ms` |
 | [Day 12](2024/day12) | `3.39 ms` | `3.41 ms` |
 | [Day 13](2024/day13) | `94.73 μs` | `90.42 μs` |
-| [Day 14](2024/day14) | | |
+| [Day 14](2024/day14) | `321.05 μs` | `93.05 ms` |
 | [Day 15](2024/day15) | | |
 | [Day 16](2024/day16) | | |
 | [Day 17](2024/day17) | | |
