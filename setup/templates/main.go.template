@@ -61,7 +61,7 @@ func main() {
 // exécution avec affichage des résultats
 func execute(part int, input string) {
 	fmt.Printf("--- YEAR {{.Year}} - DAY {{.Day}} - PART %d ---\n", part)
-	var result int
+	var result interface{}
 	if part == 1 {
 		result = partOne(input)
 	} else {
