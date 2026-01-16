@@ -10,6 +10,9 @@ import (
 //go:embed input_test.txt
 var inputTest string
 
+//go:embed input_test2.txt
+var inputTest2 string
+
 //go:embed input.txt
 var input string
 
@@ -51,7 +54,7 @@ func main() {
 	}
 	if runPart2 {
 		if isTest {
-			execute(2, inputTest)
+			execute(2, inputTest2)
 		} else {
 			execute(2, input)
 		}
@@ -60,7 +63,7 @@ func main() {
 
 // exécution avec affichage des résultats
 func execute(part int, input string) {
-	fmt.Printf("--- YEAR {{.Year}} - DAY {{.Day}} - PART %d ---\n", part)
+	fmt.Printf("--- YEAR 2024 - DAY 17 - PART %d ---\n", part)
 	var result interface{}
 	if part == 1 {
 		result = partOne(input)
