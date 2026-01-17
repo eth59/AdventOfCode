@@ -44,7 +44,7 @@ Benchmark results made on an AMD Ryzen 7 7700X processor (input parsing may not 
 | [Day 15](2024/day15) | `229.24 μs` | `279.55 μs` |
 | [Day 16](2024/day16) | `coming soon` | `coming soon` |
 | [Day 17](2024/day17) | `coming soon` | `coming soon` |
-| [Day 18](2024/day18) | | |
+| [Day 18](2024/day18) | `coming soon` | `coming soon` |
 | [Day 19](2024/day19) | | |
 | [Day 20](2024/day20) | | |
 | [Day 21](2024/day21) | | |
