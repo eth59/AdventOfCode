@@ -45,10 +45,10 @@ Benchmark results made on an AMD Ryzen 7 7700X processor (input parsing may not 
 | [Day 16](2024/day16) | `coming soon` | `coming soon` |
 | [Day 17](2024/day17) | `coming soon` | `coming soon` |
 | [Day 18](2024/day18) | `coming soon` | `coming soon` |
-| [Day 19](2024/day19) | | |
-| [Day 20](2024/day20) | | |
-| [Day 21](2024/day21) | | |
-| [Day 22](2024/day22) | | |
-| [Day 23](2024/day23) | | |
+| [Day 19](2024/day19) | `coming soon` | `coming soon` |
+| [Day 20](2024/day20) | `coming soon` | `coming soon` |
+| [Day 21](2024/day21) | `coming soon` | `coming soon` |
+| [Day 22](2024/day22) | `coming soon` | `coming soon` |
+| [Day 23](2024/day23) | `coming soon` | `coming soon` |
 | [Day 24](2024/day24) | | |
 | [Day 25](2024/day25) | | |
