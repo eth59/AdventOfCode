@@ -13,7 +13,7 @@ type Point struct {
 type MemoKey struct {
 	curr, next, depth int
 }
-var memo = make(map[MemoKey]int)
+var memo map[MemoKey]int
 
 var mapNumericKeypad = map[int]Point{
 	7 : {0,0}, 8 : {0,1}, 9 : {0,2},
@@ -32,6 +32,7 @@ func partOne(input string) int {
 }
 
 func solve(input string, depth int) (res int) {
+	memo = make(map[MemoKey]int)
 	lines := strings.Split(input, "\n")
 	for _, code := range lines {
 		nbInCodeStr := ""

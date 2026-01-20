@@ -42,13 +42,13 @@ Benchmark results made on an AMD Ryzen 7 7700X processor (input parsing may not 
 | [Day 13](2024/day13) | `94.73 μs` | `90.42 μs` |
 | [Day 14](2024/day14) | `321.05 μs` | `93.05 ms` |
 | [Day 15](2024/day15) | `229.24 μs` | `279.55 μs` |
-| [Day 16](2024/day16) | `coming soon` | `coming soon` |
-| [Day 17](2024/day17) | `coming soon` | `coming soon` |
-| [Day 18](2024/day18) | `coming soon` | `coming soon` |
-| [Day 19](2024/day19) | `coming soon` | `coming soon` |
-| [Day 20](2024/day20) | `coming soon` | `coming soon` |
-| [Day 21](2024/day21) | `coming soon` | `coming soon` |
-| [Day 22](2024/day22) | `coming soon` | `coming soon` |
-| [Day 23](2024/day23) | `coming soon` | `coming soon` |
-| [Day 24](2024/day24) | `coming soon` | `coming soon` |
+| [Day 16](2024/day16) | `9.64 ms` | `14.29 ms` |
+| [Day 17](2024/day17) | `1.17 μs` | `4.87 μs` |
+| [Day 18](2024/day18) | `777.31 μs` | `2.13 ms` |
+| [Day 19](2024/day19) | `4.63 ms` | `35.08 ms` |
+| [Day 20](2024/day20) | `2.24 ms` | `39.74 ms` |
+| [Day 21](2024/day21) | `9.50 μs` | `92.96 μs` |
+| [Day 22](2024/day22) | `15.62 ms` | `323.03 ms` |
+| [Day 23](2024/day23) | `25.69 ms` | `107.90 ms` |
+| [Day 24](2024/day24) | `470.53 μs` | `53.38 μs` |
 | [Day 25](2024/day25) | | |
