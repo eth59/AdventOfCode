@@ -50,5 +50,5 @@ Benchmark results made on an AMD Ryzen 7 7700X processor (input parsing may not 
 | [Day 21](2024/day21) | `coming soon` | `coming soon` |
 | [Day 22](2024/day22) | `coming soon` | `coming soon` |
 | [Day 23](2024/day23) | `coming soon` | `coming soon` |
-| [Day 24](2024/day24) | | |
+| [Day 24](2024/day24) | `coming soon` | `coming soon` |
 | [Day 25](2024/day25) | | |
