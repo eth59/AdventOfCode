@@ -31,7 +31,14 @@ func main() {
 
 	// valeurs par défaut
 	year := time.Now().Year()
+	month := time.Now().Month().String()
 	day := time.Now().Day()
+
+	// vérification qu'on est en décembre si aucun arg
+	if len(os.Args) == 1 && month != "December" {
+		fmt.Println("❌ Erreur : Nous ne sommes pas en décembre.")
+		os.Exit(1)
+	}
 	
 	// lecture du jour (arg 1)
 	if len(os.Args) > 1 {
