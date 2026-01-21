@@ -6,21 +6,11 @@ import (
 )
 
 
-func partOne(input string) int {
+func partOne(input string) (res int) {
 	current_position := 50
-	res := 0
 
 	for _, line := range strings.Split(input, "\n") {
-
-		if len(line) == 0 {
-			continue
-		}
-
-		nb, err := strconv.Atoi(line[1:])
-
-		if err != nil {
-			panic(err)
-		}
+		nb, _ := strconv.Atoi(line[1:])
 
 		if line[0] == 'L' {
 			current_position = (current_position - nb) % 100
@@ -33,5 +23,5 @@ func partOne(input string) int {
 		}
 	}
 
-	return res
+	return
 }

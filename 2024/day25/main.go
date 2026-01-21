@@ -65,7 +65,7 @@ func execute(part int, input string) {
 	if part == 1 {
 		result = partOne(input)
 	} else {
-		result = partTwo(input)
+		result = "Il n'y a pas de deuxième partie ! 🙃"
 	}
 	fmt.Printf("Result: %v\n", result)
 	fmt.Println()

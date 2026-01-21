@@ -4,7 +4,8 @@ import (
 	"math"
 )
 
-func partTwo(machinesInput []Machine) (res int) {
+func partTwo(input string) (res int) {
+	machinesInput := parseInput(input)
 	for _, m := range machinesInput {
 		res += solveMachinePart2(m)
 	}

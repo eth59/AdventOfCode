@@ -14,18 +14,9 @@ func partTwo(input string) int {
 	// parse boxes
 	for _, line := range lines {
 		coords := strings.Split(line, ",")
-		x, err := strconv.Atoi(coords[0])
-		if err != nil {
-			panic(err)
-		}
-		y, err := strconv.Atoi(coords[1])
-		if err != nil {
-			panic(err)
-		}
-		z, err := strconv.Atoi(coords[2])
-		if err != nil {
-			panic(err)
-		}
+		x, _ := strconv.Atoi(coords[0])
+		y, _ := strconv.Atoi(coords[1])
+		z, _ := strconv.Atoi(coords[2])
 		junctionBoxes = append(junctionBoxes, coordinates{x, y, z})
 	}
 

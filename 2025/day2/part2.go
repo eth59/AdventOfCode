@@ -6,20 +6,13 @@ import (
 	"strings"
 )
 
-func partTwo(input string) int {
-	res := 0
+func partTwo(input string) (res int) {
 	ranges := strings.Split(input, ",")
 
 	for _, r := range ranges {
 		bounds := strings.Split(r, "-")
-		nbMin, err := strconv.Atoi(bounds[0])
-		if err != nil {
-			panic(err)
-		}
-		nbMax, err := strconv.Atoi(bounds[1])
-		if err != nil {
-			panic(err)
-		}
+		nbMin, _ := strconv.Atoi(bounds[0])
+		nbMax, _ := strconv.Atoi(bounds[1])
 	
 		for i := nbMin; i <= nbMax; i++ {
 			currentStrNb := strconv.Itoa(i)
@@ -33,7 +26,7 @@ func partTwo(input string) int {
 		}
 	}
 
-	return res
+	return 
 }
 
 func splitStringN(s string, n int) []string {
