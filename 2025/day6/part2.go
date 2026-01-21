@@ -5,11 +5,9 @@ import (
 	"strings"
 )
 
-func partTwo(input string) int {
-	lines := strings.Split(strings.TrimSpace(input), "\n")
+func partTwo(input string) (res int) {
+	lines := strings.Split(input, "\n")
 	height := len(lines)
-	
-	res := 0
 
 	operands := make([]string, 10)
 	op := ""
@@ -46,22 +44,16 @@ func partTwo(input string) int {
 
 	// on oublie pas le dernier calcul
 	res += computeColumn(operands, op)
-	return res
+	return
 }
 
 
 // fonction pour calculer le résultat d'une opération
-func computeColumn(operands []string, op string) int {
-	res, err := strconv.Atoi(operands[0])
-	if err != nil {
-		panic(err)
-	}
+func computeColumn(operands []string, op string) (res int) {
+	res, _ = strconv.Atoi(operands[0])
 	for _, operand := range operands[1:] {
 		if operand == "" { break }
-		nb, err := strconv.Atoi(operand)
-		if err != nil {
-			panic(err)
-		}
+		nb, _ := strconv.Atoi(operand)
 		if op == "+" {
 			res += nb
 		} else {
@@ -69,5 +61,5 @@ func computeColumn(operands []string, op string) int {
 		}
 	}
 	
-	return res
+	return
 }

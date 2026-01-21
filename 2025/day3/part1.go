@@ -5,14 +5,9 @@ import (
 	"strings"
 )
 
-func partOne(input string) int {
-	res := 0
-
-    for _, line := range strings.Split(input, "\n") {
-        if len(line) < 3 { continue }
-        
+func partOne(input string) (res int) {
+    for _, line := range strings.Split(input, "\n") {        
         runes := []rune(line)
-
         max1 := runes[0]
 		max2 := runes[1]
 
@@ -27,12 +22,8 @@ func partOne(input string) int {
 			}
         }
 
-		nbMax, err := strconv.Atoi(string(max1) + string(max2))
-		if  err != nil {
-			panic(err)
-		}
-
+		nbMax, _ := strconv.Atoi(string(max1) + string(max2))
 		res += nbMax
     }
-    return res
+    return
 }

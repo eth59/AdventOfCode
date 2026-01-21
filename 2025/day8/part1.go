@@ -6,6 +6,19 @@ import (
 	"strings"
 )
 
+type coordinates struct {
+	x, y, z int
+}
+
+type Pair struct {
+	dist int
+	i int // index dans slice junctionBoxes
+	j int // same
+}
+
+var circuits []int
+var size []int
+
 func partOne(input string, nbPairs int) (res int) {
 	lines := strings.Split(input, "\n")
 	nbBoxes := len(lines)
@@ -14,18 +27,9 @@ func partOne(input string, nbPairs int) (res int) {
 	// parse boxes
 	for _, line := range lines {
 		coords := strings.Split(line, ",")
-		x, err := strconv.Atoi(coords[0])
-		if err != nil {
-			panic(err)
-		}
-		y, err := strconv.Atoi(coords[1])
-		if err != nil {
-			panic(err)
-		}
-		z, err := strconv.Atoi(coords[2])
-		if err != nil {
-			panic(err)
-		}
+		x, _ := strconv.Atoi(coords[0])
+		y, _ := strconv.Atoi(coords[1])
+		z, _ := strconv.Atoi(coords[2])
 		junctionBoxes = append(junctionBoxes, coordinates{x, y, z})
 	}
 
@@ -71,4 +75,35 @@ func partOne(input string, nbPairs int) (res int) {
 	res = circuitsSizes[0] * circuitsSizes[1] * circuitsSizes[2]
 
 	return
+}
+
+func computeDistance(a, b coordinates) int {
+	dx := a.x - b.x
+	dy := a.y - b.y
+	dz := a.z - b.z
+	return dx*dx + dy*dy + dz*dz
+}
+
+func find(i int) int {
+	if circuits[i] == i {
+		return i
+	}
+	circuits[i] = find(circuits[i])
+	return circuits[i]
+}
+
+func union(i, j int) bool {
+	rootI, rootJ := find(i), find(j)
+
+	if rootI != rootJ {
+		if size[rootI] < size[rootJ] {
+			rootI, rootJ = rootJ, rootI
+		}
+		circuits[rootJ] = rootI
+		size[rootI] += size[rootJ]
+
+		return true
+	}
+
+	return false
 }

@@ -6,22 +6,12 @@ import (
 )
 
 
-func partTwo(input string) int {
+func partTwo(input string) (res int) {
 	current_position := 50
-	res := 0
 	already_counted := false
 
 	for _, line := range strings.Split(input, "\n") {
-
-		if len(line) == 0 {
-			continue
-		}
-
-		nb, err := strconv.Atoi(line[1:])
-
-		if err != nil {
-			panic(err)
-		}
+		nb, _ := strconv.Atoi(line[1:])
 
 		res += nb / 100
 		nb -= (nb / 100) * 100
@@ -50,5 +40,5 @@ func partTwo(input string) int {
 		already_counted = false
 	}
 
-	return res
+	return
 }

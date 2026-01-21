@@ -6,6 +6,10 @@ import (
 	"strings"
 )
 
+type coords struct {
+	x, y float64
+}
+
 func partOne(input string) int {
 	lines := strings.Split(input, "\n")
 	nbRedTiles := len(lines)

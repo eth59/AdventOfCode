@@ -5,7 +5,8 @@ type State struct {
 	dac, fft bool
 }
 
-func partTwo(devices map[string][]string) int {
+func partTwo(input string) int {
+	devices := parseInput(input)
 	savedPaths := make(map[State]int)
 	for name := range devices {
 		savedPaths[State{name, false, false}] = -1
@@ -13,8 +14,7 @@ func partTwo(devices map[string][]string) int {
 		savedPaths[State{name, false, true}] = -1
 		savedPaths[State{name, true, true}] = -1
 	}
-	res := solverPartTwo("svr", devices, savedPaths, false, false)
-	return res
+	return solverPartTwo("svr", devices, savedPaths, false, false)
 }
 
 func solverPartTwo(name string, devices map[string][]string, savedPaths map[State]int, hasVisitedDac, hasVisitedFFT bool) (res int) {

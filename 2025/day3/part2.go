@@ -5,12 +5,18 @@ import (
 	"strings"
 )
 
+func partTwo(input string) (res int) {
+	for _, line := range strings.Split(input, "\n") {
+		maxJoltageStr := findLargestJoltage(line)
+		maxJoltage, _ := strconv.Atoi(maxJoltageStr)
+		res += maxJoltage
+	}
+	return
+}
+
 func findLargestJoltage(line string) string {
 	const requiredLength = 12
-	if len(line) < requiredLength {
-		return ""
-	}
-
+	
 	result := make([]rune, 0, requiredLength)
 	inputRunes := []rune(line)
 	startIndex := 0
@@ -31,19 +37,4 @@ func findLargestJoltage(line string) string {
 		startIndex = maxIndex + 1
 	}
 	return string(result)
-}
-
-func partTwo(input string) int {
-	res := 0
-
-	for _, line := range strings.Split(input, "\n") {
-		line = strings.TrimSpace(line)
-		maxJoltageStr := findLargestJoltage(line)
-		maxJoltage, err := strconv.Atoi(maxJoltageStr)
-		if err != nil {
-			continue // Probablement la dernière ligne vide
-		}
-		res += maxJoltage
-	}
-	return res
 }

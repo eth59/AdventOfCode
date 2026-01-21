@@ -63,7 +63,7 @@ func execute(part int, input string) {
 	fmt.Printf("--- YEAR 2025 - DAY 12 - PART %d ---\n", part)
 	var result interface{}
 	if part == 1 {
-		result = partOne(parseInput(input))
+		result = partOne(input)
 	} else {
 		result = "Il n'y a pas de deuxième partie ! 🙃"
 	}
