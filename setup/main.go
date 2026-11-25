@@ -84,7 +84,7 @@ func main() {
 	}
 
 	// on crée le dossier du jour
-	dirName := fmt.Sprintf("%d/day%d", year, day)
+	dirName := fmt.Sprintf("%d/day%02d", year, day)
 	err = os.MkdirAll(dirName, 0755)
 	if err != nil {
 		fmt.Printf("❌ Erreur lors de la création du dossier %s : %v\n", dirName, err)
